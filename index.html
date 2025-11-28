@@ -1,11 +1,25 @@
-<canvas id="gameCanvas" width="400" height="600"></canvas>
-<link rel="manifest" href="manifest.json">
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(registration => console.log('SW registered: ', registration))
-        .catch(error => console.log('SW registration failed: ', error));
-    });
-  }
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Racer PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+    <script src="script.js"></script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('service-worker.js')
+            .then(registration => console.log('SW registered: ', registration))
+            .catch(error => console.log('SW registration failed: ', error));
+        });
+      }
+    </script>
+</body>
+</html>
